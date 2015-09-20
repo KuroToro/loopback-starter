@@ -1,0 +1,79 @@
+{% extends "default.html" %}
+
+{% block content %}
+  <div class="container p-t-lg">
+  <pre>{{ str(user) }}</pre>
+
+    <div class="row">
+      <div class="col-sm-3">
+        &nbsp;
+      </div><!-- end of .col-sm-3 -->
+
+      <div class="col-sm-9">
+        <div class="card">
+          <div class="card-header">
+            <span class="h6">Profile Settings</span>
+          </div>
+
+          <div class="card-block">
+            <form action="/auth/account/update" method="post">
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="form-group">
+                    <label for="firstname"><strong>Username</strong></label>
+                    <input class="form-control" value="{{ user.username }}" type="text" id="username" name="username">
+                  </div>
+                </div><!-- end of .col-sm-8 -->
+              </div><!-- end of .row -->
+
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="form-group">
+                    <label for="firstname"><strong>Name</strong></label>
+                    <input class="form-control" value="{{ user.fullname }}" type="text" id="fullname" name="fullname">
+                  </div>
+                </div><!-- end of .col-sm-8 -->
+              </div><!-- end of .row -->
+
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="form-group">
+                    <label for="firstname"><strong>Email</strong></label>
+                    <input class="form-control" value="{{ user.email }}" type="text" id="email" name="email">
+                    <small class="help-block">
+                      You can add or remove email addresses in your personal <a href="#">email settings</a>.
+                    </small>
+                  </div>
+                </div><!-- end of .col-sm-8 -->
+              </div><!-- end of .row -->
+
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="form-group">
+                    <label for="firstname"><strong>URL</strong></label>
+                    <input class="form-control" value="{{ user.url }}" type="text" id="url" name="url">
+                  </div>
+                </div><!-- end of .col-sm-8 -->
+              </div><!-- end of .row -->
+
+              <div class="row">
+                <div class="col-sm-7">
+                  <div class="form-group">
+                    <label for="firstname"><strong>Location</strong></label>
+                    <input class="form-control" value="{{ user.location }}" type="text" id="location" name="location">
+                  </div>
+                </div><!-- end of .col-sm-8 -->
+              </div><!-- end of .row -->
+
+              <div class="form-group">
+                <button class="btn btn-success-outline" type="submit">
+                  Update Profile
+                </button>
+              </div>
+            </form>
+          </div><!-- end of .card-block -->
+        </div><!-- end of .card -->
+      </div><!-- end of .col-sm-9 -->
+    </div><!-- end of .row -->
+  </div>
+{% endblock %}

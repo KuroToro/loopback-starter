@@ -1,0 +1,15 @@
+{
+  "db": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "url": "mongodb://127.0.0.1:27017/app",
+    "name": "app",
+    "db": "app",
+    "debug": true,
+    "connector": "loopback-connector-mongodb"
+  },
+  "sessionStore": {
+    "host": "127.0.0.1",
+    "port": 16379
+  }
+}

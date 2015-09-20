@@ -1,0 +1,22 @@
+{
+  "name": "loopback-starter",
+  "version": "1.0.0",
+  "homepage": "https://github.com/pongstr/loopback-boilerplate",
+  "authors": [
+    "Pongstr <twiz.tickler@gmail.com>"
+  ],
+  "description": "loopback-starter",
+  "main": "server/server.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
+  }
+}

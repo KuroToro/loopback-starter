@@ -1,0 +1,65 @@
+
+{% set header  = false %}
+{% set footer  = false %}
+{% set styles  = true %}
+{% set scripts = false %}
+{% extends "default.html" %}
+
+
+{% block styles %}
+  <style type="text/css">
+    html, body,
+    body > .container,
+    body .cover {
+      height: 100%;
+    }
+
+    body {
+      background-color: #fafafa;
+    }
+
+    body .cover {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+    body .cover > form {
+      flex-basis: 40%;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    .card {
+      background-color: #fff;
+    }
+  </style>
+{% endblock %}
+
+{% block header %}
+  Header
+{% endblock %}
+
+{% block footer %}
+  Footer
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="cover">
+      {% if page.name == "login" %}
+      <form class="card" action="/auth/local" method="post">
+        {% include "widgets/login.html" %}
+      </form>
+      {% endif %}
+
+      {% if page.name == "local" %}
+      <form class="card" action="/create-account" method="post">
+        {% include "widgets/signup.html" %}
+      </form>
+      {% endif %}
+    </div><!-- end of .cover -->
+  </div><!-- end of .container -->
+{% endblock %}
